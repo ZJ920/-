@@ -2,6 +2,7 @@ package 图书管理系统;
 
 import java.awt.*;
 import javax.swing.*;
+
 public class Mywin extends JFrame{
 	JMenuBar menubar1;//菜单条
     JMenu menu1,menu2;//菜单

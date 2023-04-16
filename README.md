@@ -10,6 +10,7 @@ SDWZ.JAVA.Library-Management-System(图书管理系统)，留给后来的学弟�
 这是MySQL的部分：
 ![img.png](img.png)
 ![img_1.png](img_1.png)
+![img_3.png](img_3.png)
 
 Navicat Premium中MySQL连接显示错误信息：Client does not support authentication protocol requested by server; consider upgrading MySQL client
 参考：https://blog.csdn.net/m0_38019554/article/details/81912265?spm=1001.2014.3001.5506

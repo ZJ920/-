@@ -9,13 +9,17 @@ public class Test extends JFrame{
 	JPasswordField mm1;//密码框
 	JButton tijiao,quxiao;//按钮
 	ReaderListen jsq1;//创建监视器 jsq1是监视器
-	public Test(String s){
+	Test shifang;//用于释放窗口
+
+	public Test(){
 		setLayout(null);//空布局（组件需要设置位置，否则不能在JPanel上显示）
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//结束窗口所在的应用程序
 		setVisible(true);//设置窗口是否可见（默认不可见）
-		init(s);
 	}
-	void init(String s){
+
+	void init(String s,Test shifang){
+		this.shifang = shifang;
+		//System.out.println("接过来的对象（win1）为："+this.shifang);
 
 		setTitle(s);//窗口名称：s是从Mywindow传过来的
 		a=new JLabel("图书管理系统登陆界面");
@@ -53,6 +57,9 @@ public class Test extends JFrame{
 		jsq1.setJTextField(yhm1);//将“yhum1”传进ReaderLiten
 		jsq1.setJPasswordField(mm1);//将“mm1”传进ReaderLiten
 		jsq1.setJButton(quxiao);
-		jsq1.Shifang(this);//用于释放窗口
+
+
+		jsq1.Shifang(shifang);//用于释放窗口
+		//System.out.println("接到后要传过去的对象（shifang）为："+shifang);
 	}
 }

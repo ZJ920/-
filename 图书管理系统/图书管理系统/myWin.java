@@ -3,12 +3,12 @@ package 图书管理系统;
 import java.awt.*;
 import javax.swing.*;
 
-public class Mywin extends JFrame{
+public class myWin extends JFrame{
 	JMenuBar menubar1;//菜单条
     JMenu menu1,menu2;//菜单
     JMenuItem item1,item2,item3,item4,item5;//菜单项
     Reader jsq2;
-    Mywin (String s,int a,int b,int c,int d){
+    myWin (String s,int a,int b,int c,int d){
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());

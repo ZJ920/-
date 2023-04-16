@@ -13,7 +13,7 @@ public class ReaderListen implements ActionListener {//负责创建监视器的�
 	Statement sql;
 	ResultSet rs;
 	Connection con;
-	Test b;
+	Test shifang;//用于释放窗口
     void setJTextField(JTextField yhum1) {
 		tiquyhm1=yhum1;
 	}
@@ -22,8 +22,9 @@ public class ReaderListen implements ActionListener {//负责创建监视器的�
 		tiqumm1=mm1;
 	}
 	//
-	void Shifang(Test j) {
-		b=j;
+	void Shifang(Test shifang) {
+		this.shifang=shifang;
+		//System.out.println("再接过来的对象（shifang）为："+this.shifang);
 	}
 	//用于释放窗口
 	public void setJButton(JButton quxiao1) {
@@ -62,9 +63,9 @@ public class ReaderListen implements ActionListener {//负责创建监视器的�
 /*重点*/		    		rs=sql.executeQuery(sqlStr);
 
 			    	if(rs.next()) {
-			    	    Mywin win2= new Mywin("图书管理系统",500,300,800,500);
+			    	    myWin win2= new myWin("图书管理系统",500,300,800,500);
 			    	    win2.setBackground(Color.blue);
-			    	     b.dispose();//用于释放窗口
+						shifang.dispose();//用于释放窗口
 			    	}else{
 			    		    JOptionPane.showMessageDialog(null,"您输入的账号或密码不正确，请检查后重试！","消息",JOptionPane.QUESTION_MESSAGE);
 							tiquyhm1.setText(null);

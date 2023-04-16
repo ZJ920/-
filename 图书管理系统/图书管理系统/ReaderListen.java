@@ -52,12 +52,13 @@ public class ReaderListen implements ActionListener {//负责创建监视器的�
 /*可记*/		    if(xianshiyhm.matches(regex)&&xianshimm.matches(regex)) {//判断是否为非法字符
 			    	
 /*重点*/				con = GetDBConnection.connectDB("student", "root","162278");
-
+					//	root、162278是连接MySQL的用户名和密码；student是数据库名
 			    	//String n = "ID='xianshiyhm'";
 			    	//String p = "password='xianshimm'";
 			    	//String sqlStr="select*from yh where "+n+" and "+p+"";
 
 /*重点*/		    	String sqlStr = "select * from yh where ID='"+xianshiyhm+"' and password='"+xianshimm+"'";
+					//查询yh表中ID、password两个数据类型
 			    	try {
 			    		sql=con.createStatement();
 /*重点*/		    		rs=sql.executeQuery(sqlStr);
@@ -65,7 +66,7 @@ public class ReaderListen implements ActionListener {//负责创建监视器的�
 			    	if(rs.next()) {
 			    	    myWin win2= new myWin("图书管理系统",500,300,800,500);
 			    	    win2.setBackground(Color.blue);
-						shifang.dispose();//用于释放窗口
+						shifang.dispose();//释放登录窗口
 			    	}else{
 			    		    JOptionPane.showMessageDialog(null,"您输入的账号或密码不正确，请检查后重试！","消息",JOptionPane.QUESTION_MESSAGE);
 							tiquyhm1.setText(null);
